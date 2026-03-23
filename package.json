@@ -1,0 +1,16 @@
+{
+  "name": "nanghlykemoukkhao_inm420sbb_jslibraries",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server --baseDir=public"
+  },
+  "keywords": [],
+  "author": "Nang Hlyke Mouk Khao",
+  "private": true,
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

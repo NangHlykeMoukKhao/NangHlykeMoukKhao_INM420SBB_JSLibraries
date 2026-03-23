@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thailand Adventures</title>
+  <meta name="description" content="Plan your Thailand vacation: curated destinations, gallery, interactive map, and booking.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Glide.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+  <!-- Lightbox2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Header section: Contains the website logo, navigation menu, and mobile toggle button for responsive design -->
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="Thailand Adventures home">Thailand<span>Adventures</span></a>
+    <!-- Mobile navigation toggle button: used to open and close the menu on small screens -->
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#map-section">Map</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero section introducing Thailand with heading, description, and CTA buttons -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" role="img" aria-label="Thailand famous temple"></div>
+      <div class="hero__content" data-aos="fade-up" data-aos-duration="900">
+        <p class="hero__eyebrow">Curated Thailand travel</p>
+        <h1 id="hero-title" class="hero__title">Where tradition meets tomorrow</h1>
+        <p class="hero__desc">From bustling markets in Bangkok to serene beaches in Phuket—craft a journey that blends tradition, flavor, and relaxation.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#destinations">Explore destinations</a>
+          <a class="btn btn--ghost" href="#contact">Plan your trip</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinations section with 4 cards -->
+    <section id="destinations" aria-labelledby="destinations-title">
+      <div class="section__inner">
+        <header class="section__header" data-aos="fade-up">
+          <h2 id="destinations-title" class="section__title">Destinations</h2>
+          <p class="section__subtitle">Explore four unique regions, each with its own sights and experiences.</p>
+        </header>
+
+        <!-- 4 images showing destinations in Thailand -->
+        <!-- Destinations grid: uses AOS (Animate On Scroll) library to add fade-up animations with staggered delays for each card -->
+        <div class="destinations-grid">
+          <article class="destination-card" data-aos="fade-up" data-aos-delay="0">
+            <img class="destination-card__image" src="assets/images/chiang mai.jpg" alt="Chiang Mai temples golden temples" width="800" height="600" loading="lazy">
+            <div class="destination-card__body">
+              <h3 class="destination-card__title">Chiang Mai</h3>
+              <p class="destination-card__text">Nestled in northern mountains, this city charms with ancient temples, vibrant night markets, and serene countryside.</p>
+            </div>
+          </article>
+          <article class="destination-card" data-aos="fade-up" data-aos-delay="100">
+            <img class="destination-card__image" src="assets/images/bangkook.jpg" alt="Thailand's bustling capital Bangkok" width="800" height="600" loading="lazy">
+            <div class="destination-card__body">
+              <h3 class="destination-card__title">Bangkok</h3>
+              <p class="destination-card__text">Thailand’s bustling capital, full of grand palaces, colorful markets, and vibrant street life.</p>
+            </div>
+          </article>
+          <article class="destination-card" data-aos="fade-up" data-aos-delay="200">
+            <img class="destination-card__image" src="assets/images/phuket.jpg" alt="One of the beach in Thailand" width="800" height="600" loading="lazy">
+            <div class="destination-card__body">
+              <h3 class="destination-card__title">Phuket</h3>
+              <p class="destination-card__text">Sun-soaked beaches and crystal-clear waters perfect for relaxation and adventure.</p>
+            </div>
+          </article>
+          <article class="destination-card" data-aos="fade-up" data-aos-delay="300">
+            <img class="destination-card__image" src="assets/images/ayutthaya.jpg" alt="Historic city in Thailand" width="800" height="600" loading="lazy">
+            <div class="destination-card__body">
+              <h3 class="destination-card__title">Ayutthaya</h3>
+              <p class="destination-card__text">A historic city of ancient ruins and temples, offering a glimpse into Thailand’s rich past.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Experiences sections-->
+    <!-- Featured section: uses AOS for scroll animations and Glide.js to create an interactive image slider -->
+    <section id="featured" aria-labelledby="featured-title">
+      <div class="section__inner">
+
+        <!-- Section header with AOS animation -->
+        <header class="section__header" data-aos="fade-up">
+          <h2 id="featured-title" class="section__title">Featured experiences</h2>
+          <p class="section__subtitle">Discover Thailand’s highlights—vibrant markets, island escapes, and temples rich in culture.</p>
+        </header>
+
+        <!-- Glide.js slider container with AOS zoom-in animation -->
+        <div class="glide" data-aos="zoom-in" data-aos-duration="800">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide">
+                <img class="slide__image" src="assets/images/songkran.jpg" alt="People enjoying the Songkran festival" width="1600" height="900">
+                <div class="slide__overlay">
+                  <span class="slide__tag">Summer</span>
+                  <h3 class="slide__title">Songkran Festival in Bangkok</h3>
+                  <p class="slide__text">Water-filled streets, joyful celebrations, and a refreshing way to welcome the Thai New Year.</p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <img class="slide__image" src="assets/images/buddhist temple.jpg" alt="Buddhist Temple" width="1600" height="900">
+                <div class="slide__overlay">
+                  <span class="slide__tag">Culture</span>
+                  <h3 class="slide__title">Temples & Traditional Rituals</h3>
+                  <p class="slide__text">Golden stupas, incense in the air, and peaceful moments—experience Thailand’s rich spiritual heritage.</p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <img class="slide__image" src="assets/images/mango sticky rice.jpg" alt="Mango Sticky rice" width="1600" height="900">
+                <div class="slide__overlay">
+                  <span class="slide__tag">Food</span>
+                  <h3 class="slide__title">Pad Thai, Tom Yum, or Mango Sticky Rice</h3>
+                  <p class="slide__text">From local stalls to elegant restaurants—plan a few must-tries and leave room to explore.</p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <img class="slide__image" src="assets/images/tomorrow land.jpg" alt="Bangkok City Life" width="1600" height="900">
+                <div class="slide__overlay">
+                  <span class="slide__tag">City life</span>
+                  <h3 class="slide__title">Tomorrow Land</h3>
+                  <p class="slide__text">Electric stages, glowing lights, and immersive sets filled with music, energy, and unforgettable moments.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Glide.js navigation arrows -->
+          <div class="glide__arrows" data-glide-el="controls">
+            <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="&lt;" aria-label="Previous slide">&#8592;</button>
+            <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir="&gt;" aria-label="Next slide">&#8594;</button>
+          </div>
+
+          <!-- Glide.js pagination bullets -->
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button type="button" class="glide__bullet glide__bullet--active" data-glide-dir="=0" aria-label="Go to slide 1"></button>
+            <button type="button" class="glide__bullet" data-glide-dir="=1" aria-label="Go to slide 2"></button>
+            <button type="button" class="glide__bullet" data-glide-dir="=2" aria-label="Go to slide 3"></button>
+            <button type="button" class="glide__bullet" data-glide-dir="=3" aria-label="Go to slide 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Gallery Section displaying 8 images -->
+    <!-- Gallery section: uses Lightbox for image pop-up viewing and AOS for scroll animations with staggered effects -->
+    <section id="gallery" aria-labelledby="gallery-title">
+      <div class="section__inner">
+
+        <!-- Section header with AOS animation -->
+        <header class="section__header" data-aos="fade-up">
+          <h2 id="gallery-title" class="section__title">Gallery</h2>
+          <p class="section__subtitle">Tap any image to explore Thailand’s beauty in full view.</p>
+        </header>
+
+        <!-- Image grid: Lightbox enables full-screen image viewing when clicked, AOS adds fade-up animation -->
+        <div class="gallery-grid">
+          <a class="gallery-item" href="assets/images/pattaya.jpg" data-lightbox="thailand-gallery" data-title="Pattaya Beach" data-aos="fade-up" data-aos-delay="0">
+            <img src="assets/images/pattaya.jpg" alt="Pattaya Beach" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Pattaya</span>
+          </a>
+          <a class="gallery-item" href="assets/images/floating market.jpg" data-lightbox="thailand-gallery" data-title="Floating Market" data-aos="fade-up" data-aos-delay="50">
+            <img src="assets/images/floating market.jpg" alt="Floating Market" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Floating Market</span>
+          </a>
+          <a class="gallery-item" href="assets/images/siam.png" data-lightbox="thailand-gallery" data-title="Iconic Siam" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/siam.png" alt="Iconic Siam" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Iconic Siam</span>
+          </a>
+          <a class="gallery-item" href="assets/images/chiang rai.png" data-lightbox="thailand-gallery" data-title="Chiang Rai Temple" data-aos="fade-up" data-aos-delay="150">
+            <img src="assets/images/chiang rai.png" alt="Chiang Rai" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Chiang Rai</span>
+          </a>
+          <a class="gallery-item" href="assets/images/Kanchanaburi.jpg" data-lightbox="thailand-gallery" data-title="Kanchanaburi" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/Kanchanaburi.jpg" alt="Kanchanaburi" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Kanchanaburi</span>
+          </a>
+          <a class="gallery-item" href="assets/images/khao yai.jpg" data-lightbox="thailand-gallery" data-title="Khao Yai" data-aos="fade-up" data-aos-delay="250">
+            <img src="assets/images/khao yai.jpg" alt="Khao Yai" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Khao Yai</span>
+          </a>
+          <a class="gallery-item" href="assets/images/wat arun.jpg" data-lightbox="thailand-gallery" data-title="Wat Arun" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/images/wat arun.jpg" alt="Wat Arun" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Wat Arun</span>
+          </a>
+          <a class="gallery-item" href="assets/images/Phi Phi Island.jpg" data-lightbox="thailand-gallery" data-title="Phi Phi Island" data-aos="fade-up" data-aos-delay="350">
+            <img src="assets/images/Phi Phi Island.jpg" alt="Phi Phi Island" width="600" height="600" loading="lazy">
+            <span class="gallery-item__hint">Phi Phi Island</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <!-- Map section: uses Leaflet.js to display an interactive map and AOS for scroll animations -->
+    <section id="map-section" aria-labelledby="map-title">
+      <div class="section__inner">
+
+        <!-- Section header with AOS animation -->
+        <header class="section__header" data-aos="fade-up">
+          <h2 id="map-title" class="section__title">Map</h2>
+          <p class="section__subtitle">Bangkok—our suggested starting point for first-time visitors. Pan and zoom to explore nearby areas.</p>
+        </header>
+
+        <!-- Map container: Leaflet renders the interactive map -->
+        <div class="map-wrap" data-aos="fade-up">
+          <div id="map" role="application" aria-label="Map of Thailand Bangkok Area"></div>
+        </div>
+        <p class="map-note">Tiles © OpenStreetMap contributors. Marker: Bangkok city center.</p>
+      </div>
+    </section>
+
+    <!-- Contact and Book Section -->
+    <!-- Contact & Booking section: uses AOS for scroll animations and custom JS for form handling -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="section__inner">
+
+        <!-- Section header with AOS animation -->
+        <header class="section__header" data-aos="fade-up">
+          <h2 id="contact-title" class="section__title">Contact &amp; Booking</h2>
+          <p class="section__subtitle">Tell us your dates and interests—we’ll reply you soon</p>
+        </header>
+
+        <div class="contact-layout">
+          <div class="contact-intro" data-aos="fade-right">
+
+            <!-- Intro text section with description and contact details, animated from right on scroll -->
+            <p>"Thailand Adventures" helps independent travelers plan routes, explore local neighborhoods, and discover authentic experiences without the rush of package tours.</p>
+            <p>Peak seasons (Songkran, festivals, and holidays) fill fast—share your travel dates early.</p>
+
+            <!-- List of contact details -->
+            <ul class="contact-details">
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:hello@japanjourneys.example">thailandadventures123@gmail.com</a>
+              </li>
+              <li>
+                <strong>Studio hours</strong>
+                Mon–Fri, 9:00 AM - 5:00 PM 
+              </li>
+            </ul>
+          </div>
+
+          <!-- Booking form section, using AOS animated library -->
+          <form id="booking-form" class="booking-form" data-aos="fade-left" novalidate>
+            <div class="form-row form-row--half">
+              <div>
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-row form-row--half">
+              <div>
+                <label for="travel-dates">Travel dates</label>
+                <input type="text" id="travel-dates" name="travel-dates" placeholder="e.g. April 5–20, 2026">
+              </div>
+              <div>
+                <label for="travelers">Travelers</label>
+                <select id="travelers" name="travelers">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5+">5 or more</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="focus">Focus</label>
+              <select id="focus" name="focus">
+                <option value="balanced">Balanced cities &amp; nature</option>
+                <option value="food">Food &amp; markets</option>
+                <option value="culture">Temples &amp; museums</option>
+                <option value="first-timer">First-time Japan essentials</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Anything you would like to say..."></textarea>
+            </div>
+
+            <!-- Submit button for the form -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Send request</button>
+            </div>
+            <p id="form-feedback" class="form-feedback form-feedback--success" role="status" aria-live="polite" tabindex="-1"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Thailand Adventures</p>
+  </footer>
+
+  <!-- jQuery required by Lightbox2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Lightbox2 library for displaying images in a popup/lightbox gallery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- AOS (Animate On Scroll) library for scroll animations on elements -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Glide.js library for creating responsive sliders -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <!-- Leaflet.js library for interactive maps -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
